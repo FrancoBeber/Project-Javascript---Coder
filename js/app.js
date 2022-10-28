@@ -115,11 +115,9 @@ function newRow(listadoProductos){
     celda.appendChild(botonBorrarElemento);
     row.append(celda);
     tabla.append(row);
-    total.innerText = carritoCompras.reduce((suma, listadoProductos) => {
-      console.log(listadoProductos.producto.precio);
-      console.log(listadoProductos.cant);
-      suma + parseInt(listadoProductos.precio * listadoProductos.cantidad)
-    },0);
+    total.innerText = carritoCompras.reduce((suma, listadoProductos) =>
+      suma + parseInt(listadoProductos.producto.precio * listadoProductos.cant)
+    ,0);
 
     botonSumarProd.addEventListener("click", ()=>{
       carritoCompras[pos].cant++;
