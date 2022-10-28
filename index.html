@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Bootsrap-->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- Javascript -->
+    <script src="./js/producto.js"></script>
+    <script src="./js/listaProductos.js"></script>
+    <title>ABM Productos
+    </title>
+  </head>
+  <body class="body-index">
+    <header>
+      <div class="container-fluid text-center p-2">
+        <h1>Bienvenido</h1>
+      </div>
+    </header>
+    <main>
+      <div class="container p-2">
+        <form action="">
+      <form class="row g-3">
+        <div class="row text-center">
+        <div class="col-md-12 p-2">
+          <label for="inputId" class="form-label">ID</label>
+          <input
+            type="text"
+            class="form-control text-center"
+            id="inputId"
+            placeholder="Ingrese id"
+          />
+        </div>
+        </div>
+        <div class="row text-center">
+        <div class="col-md-12 p-2">
+          <label for="inputTipo" class="form-label">Tipo</label>
+          <input
+            type="text"
+            class="form-control text-center"
+            id="inputTipo"
+            placeholder="Ingrese Tipo"
+          />
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12 p-2">
+          <label for="inputMarca" class="form-label">Marca</label>
+          <input
+            type="text"
+            class="form-control text-center"
+            id="inputMarca"
+            placeholder="Ingrese Marca"
+          />
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12 p-2">
+          <label for="inputPrecio" class="form-label">Precio</label>
+          <input
+            type="text"
+            class="form-control text-center"
+            id="inputPrecio"
+            placeholder="Ingrese Precio"
+          />
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12 p-2">
+          <button type="submit" class="btn btn-primary" id="btnAgregar">
+            Agregar
+          </button>
+        </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12 p-2">
+              <button type="submit" class="btn btn-primary" id="btnPersistir">
+                Persistir todo
+              </button>
+            </div>
+            </div>
+    </form>
+    <form action="">
+        <div class="col-md-12 p-2">
+          <label for="inputIDCons" class="form-label">ID</label>
+          <input
+            type="text"
+            class="form-control text-center"
+            id="inputIDCons"
+            placeholder="Ingrese ID a consultar"
+          />
+        </div>
+        </div>
+        <div class="row text-center">
+        <div class="col p-2">
+          <button type="submit" class="btn btn-primary" id="btnConsultar">
+            Consultar
+          </button>
+        </div>
+        <div class="col p-2">
+          <button type="submit" class="btn btn-primary" id="btnBorrar">
+            Borrar
+          </button>
+        </div>
+      </div>
+      </form>
+      <div class="container m-3 row">
+        <div class="container m-1 col">
+          <form id="agregar">
+            <label for="productos">Seleccione un producto de la lista</label>
+            <select id="listadoProductos" class="form-control">
+            </select>
+            <button id="btnAniadir" class="btn btn-primary">Agregar</button>
+          </form>
+        </div>
+      </div>
+      <div class="container m-1">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Tipo</th>
+              <th>Marca</th>
+              <th>Precio/U</th>
+              <th>Cantidad</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody id="listItems">
+            
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Total:</th>
+              <th></th>
+              <th id="totalPrecio"></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    </main>
+    <footer></footer>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Javascript -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
