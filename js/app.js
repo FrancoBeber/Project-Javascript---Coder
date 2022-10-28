@@ -12,8 +12,8 @@ let btnAniadir = document.getElementById("btnAniadir");
 let selecListado = document.getElementById("listadoProductos");
 let tabla = document.getElementById("listItems");
 let total = document.getElementById("totalPrecio")
-/* Creamos el carro de compra y nuestro inventario de productos */
 
+/* Creamos el carro de compra y nuestro inventario de productos */
 let carritoCompras = [];
 let inventario=[];
 
@@ -33,6 +33,7 @@ inventario.forEach((producto)=>{
   selecListado.appendChild(option);
   console.log(producto)
 })
+
 /* Obtenemos el Form */
 let forms = document.querySelectorAll("form");
 
@@ -66,32 +67,40 @@ btnAniadir.addEventListener("click", (e)=>{
   newRow(elementoNuevoCarro);
   localStorage.setItem("Carrito",JSON.stringify(carritoCompras));
 })
-/* Funcion para cargar elementos a una tabla */
+
+/* Funcion para cargar elementos a una tabla (crear filas) */
 function newRow(listadoProductos){
+  /* Definimos la fila y la posicion de la misma */
     let row = document.createElement("tr");
     let pos = carritoCompras.indexOf(listadoProductos);
+    /* Agregamos el id del producto */
     let celda = document.createElement("td");
     celda.innerText = listadoProductos.producto.id;
     row.appendChild(celda);
+    /* Agregamos el tipo del producto */
     celda = document.createElement("td");
     celda.innerText = listadoProductos.producto.tipo;
     row.append(celda);
     row.appendChild(celda);
+    /* Agregamos la marca del producto */
     celda = document.createElement("td");
     celda.innerText = listadoProductos.producto.marca;
     row.append(celda);
     row.appendChild(celda);
+    /* Agregamos el precio del prodcuto */
     celda = document.createElement("td");
     celda.innerText = parseInt(listadoProductos.producto.precio);
     row.append(celda);
-
+    /* Agregamos la cantidad del producto */
     celda= document.createElement("td");
     celda.innerText = parseInt(listadoProductos.cant);
 
+    /* Agregamos los botones para aumentar cantidad*/
     let botonSumarProd = document.createElement('button');
     botonSumarProd.className= "btn btn-danger";
     botonSumarProd.innerText = "+";
 
+    /* Agregamos los botones para disminuir cantidad*/
     let botonQuitarProd = document.createElement('button');
     botonQuitarProd.className= "btn btn-danger";
     botonQuitarProd.innerText = "-";
@@ -110,7 +119,7 @@ function newRow(listadoProductos){
       actualizarLista();
       localStorage.setItem("Carrito",JSON.stringify(carritoCompras))
     })
-
+    /* Calculamos el precio total*/
     celda=document.createElement("td");
     celda.appendChild(botonBorrarElemento);
     row.append(celda);
@@ -133,7 +142,7 @@ function newRow(listadoProductos){
         localStorage.setItem("Carrito", JSON.stringify(carritoCompras));
       }
     })
-
+    /* Actualizamos la tabla */
     function actualizarLista(){
       tabla.innerHTML="";
       carritoCompras.forEach((elemento)=>{
